@@ -80,12 +80,12 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
         double rho_dot = measurement_pack.raw_measurements_[2]; // velocity of rho
         // Coordinates convertion from polar to cartesian
         double x = rho * cos(phi);
-        if ( x < 0.0001 ) {
-            x = 0.0001;
+        if ( x < EPS ) {
+            x = EPS;
         }
         double y = rho * sin(phi);
-        if ( y < 0.0001 ) {
-            y = 0.0001;
+        if ( y < EPS ) {
+            y = EPS;
         }
         double vx = rho_dot * cos(phi);
         double vy = rho_dot * sin(phi);
@@ -176,5 +176,6 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
 
   // print the output
   cout << "x_ = " << ekf_.x_ << endl;
-  cout << "P_ = " << ekf_.P_ << endl;
+ cout << "P_ = " << ekf_.P_ << endl;
+ 
 }
