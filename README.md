@@ -74,6 +74,11 @@ using the following settings:
 
 Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
 
+Code optimization
+As defined in the rubric, I have optimized the code by storing calculations that are repeated and reused them
+The optimizations can be found in FusionEKF.cpp line 139 to 154. [FusionEKF] (src/FusionEKF.cpp)
+Similarly in kalman_filter.cpp code reuse ie. a common method UpdateY at line 37 was defined [kalmanFilter] (src/kalman_filter.cpp)
+
 ## Generating Additional Data
 
 This is optional!
